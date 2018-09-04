@@ -17,8 +17,6 @@ measurements = [search_time]
 for index in range(0, amount_of_results):
     search_results_page = SearchResultsPage(driver)  # Since im requerying every time the results might change
     # (which can cause bug if a result is pushed down in order). Without it elements would be stale.
-    if search_results_page.results_elements.__len__() < amount_of_results:
-        raise Exception()
     search_result = search_results_page.get_search_result(index)
     time_in_seconds_for_load = search_results_page.click_on_search_result_and_measure(index)
     measurements.append("Page with id:{0},name:{1} took {2} seconds to load"
