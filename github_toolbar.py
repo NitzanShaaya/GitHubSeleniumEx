@@ -1,6 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from github_locators import SearchBoxLocator
+import time_common
 
 
 class Toolbar(object):
@@ -14,4 +15,6 @@ class Toolbar(object):
     def search(self, value):
         self.search_box.clear()
         self.search_box.send_keys(value)
-        self.search_box.submit()
+        search_time = time_common.measure_time_of_action(self.search_box.submit)
+        #  Page loads here for some reason. So i can only measure here
+        return "Search took {0} seconds".format(search_time)
