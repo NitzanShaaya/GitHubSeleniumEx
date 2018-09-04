@@ -48,3 +48,5 @@ class SearchResult(object):
         self.last_update_time = get_last_update_time(element)
         self.language = get_language(element)
         self.stars = get_stars(element)
+
+# I have looked for an orm that supports mysql. Found none, how can you say no one likes microsoft
