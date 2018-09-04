@@ -1,16 +1,21 @@
 import mysql.connector
-import search_result
+
 
 class DbManager:
-    def __init__(self):
-        self.host = "localhost"
-        self.user = "root"
-        self.passwd = "Password1"
-        self.database = "scrapper_output"
+    def __init__(self, host, port, user, passwd, database):
+        self.host = host
+        self.port = port
+        self.user = user
+        self.passwd = passwd
+        self.database = database
         self.db_connection = None
 
     def create_connection(self):
-        self.db_connection = mysql.connector.connect(host=self.host, user=self.user, passwd=self.passwd, database=self.database)
+        self.db_connection = mysql.connector.connect(host=self.host,
+                                                     port=self.port,
+                                                     user=self.user,
+                                                     passwd=self.passwd,
+                                                     database=self.database)
 
     def close_connection(self):
         self.db_connection.disconnect()

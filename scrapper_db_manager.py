@@ -6,6 +6,13 @@ insert_sql = "INSERT INTO search_results(uuid,is_error,title,description,tags,la
 
 
 class ScrapperDbManager(DbManager):
+    def __init__(self):
+        self.host = "localhost"
+        self.port = 3306
+        self.user = "root"
+        self.passwd = "Password1"
+        self.database = "scrapper_output"
+
     def insert_search_results(self, search_results):
         values = []
         for search_result in search_results:

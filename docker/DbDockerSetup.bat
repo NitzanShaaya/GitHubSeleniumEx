@@ -1,4 +1,4 @@
-docker run -p 4000:80 --name=scrapperdb -e MYSQL_ROOT_PASSWORD=Password1 -d mysql/mysql-server:8.0
+docker run -dit -p 3306:80 --name=scrapperdb -e MYSQL_ROOT_PASSWORD=Password1 -d mysql/mysql-server:8.0
 docker exec -it scrapperdb mysql -uroot -p
 CREATE DATABASE scrapper_output;
 USE scrapper_output;

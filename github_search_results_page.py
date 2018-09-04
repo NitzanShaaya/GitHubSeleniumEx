@@ -1,6 +1,5 @@
 from github_locators import SearchResultsLocator
 from base_page import BasePage
-from search_result import SearchResult
 import time_common
 
 
@@ -16,6 +15,3 @@ class SearchResultsPage(BasePage):
 
     def click_on_search_result_and_measure(self, index):
         return time_common.measure_time_of_action(self.get_search_result_link(index).click)
-
-    def get_search_result(self, index):
-        return SearchResult(self.results_elements[index])
