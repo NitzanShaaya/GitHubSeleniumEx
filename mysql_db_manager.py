@@ -10,7 +10,7 @@ class MysqlDbManager(object):
         self.database = database
         self.db_connection = None
 
-    def create_connection(self):
+    def open_connection(self):
         self.db_connection = mysql.connector.connect(host=self.host,
                                                      port=self.port,
                                                      user=self.user,
@@ -21,8 +21,6 @@ class MysqlDbManager(object):
         self.db_connection.disconnect()
 
     def insert(self, sql, values):
-        self.create_connection()
         cursor = self.db_connection.cursor()
         cursor.executemany(sql, values)
         self.db_connection.commit()
-        self.close_connection()

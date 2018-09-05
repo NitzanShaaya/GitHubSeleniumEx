@@ -12,13 +12,13 @@ class ConfigManager:
     def get_config_string(self, section, option):
         try:
             return self.config.get(section, option)
-        except:
+        except Exception:
             print_and_throw_exception(section, option)
 
     def get_config_int(self, section, option):
         try:
             return self.config.getint(section, option)
-        except:
+        except Exception:
             print_and_throw_exception(section, option)
 
 

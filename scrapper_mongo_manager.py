@@ -1,4 +1,5 @@
 from mongo_manager import MongoManager
+from config_manager import ConfigManager
 
 
 def convert_page_details_to_dictionary(page_details):
@@ -13,12 +14,12 @@ def convert_page_details_to_dictionary(page_details):
 
 
 class ScrapperMongoManager(MongoManager):
-    def __init__(self):
-        self.url = "mongodb://localhost:2017"
-        self.database = "scrapper_output"
-        self.col = "pages_details"
-        self.user = "admin"
-        self.password = "admin"
+    def __init__(self, config_manager):
+        super(ScrapperMongoManager, self).__init__(config_manager.get_config_string('Mongo', 'Url'),
+                                                   config_manager.get_config_string('Mongo', 'DataBase'),
+                                                   config_manager.get_config_string('Mongo', 'Column'),
+                                                   config_manager.get_config_string('Mongo', 'User'),
+                                                   config_manager.get_config_string('Mongo', 'Password'))
 
     def insert_pages_details(self, pages_details):
         values = []

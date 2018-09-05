@@ -1,7 +1,7 @@
 import pymongo
 
 
-class MongoManager:
+class MongoManager(object):
     def __init__(self, url, database, col, user, password):
         self.url = url
         self.database = database
@@ -14,8 +14,6 @@ class MongoManager:
 
     def open_connection(self):
         self.client = pymongo.MongoClient(self.url)
-        result = self.client.scrapper_output.authenticate(self.user, self.password)
-        print result
         self.mongo_db = self.client[self.database]
         self.col = self.mongo_db[self.col]
 
