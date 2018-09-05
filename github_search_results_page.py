@@ -7,6 +7,7 @@ class SearchResultsPage(BasePage):
 
     def __init__(self, driver):
         self.results_elements = driver.find_elements(*SearchResultsLocator.RESULTS_LOCATOR)
+        super(SearchResultsPage, self).__init__(driver)
 
     def get_search_result_link(self, index):
         return self.results_elements[index] \

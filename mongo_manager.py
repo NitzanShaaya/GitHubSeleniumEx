@@ -23,6 +23,4 @@ class MongoManager:
         self.client.close()
 
     def insert(self, values):
-        self.open_connection()
         self.col.insert_many(values)
-        self.close_connection()

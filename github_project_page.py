@@ -8,6 +8,7 @@ class ProjectPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
         self.is_error = driver.page_source.__contains__('404')
+        super(ProjectPage, self).__init__(driver)
 
     def get_title(self):
         title_author = self.driver.find_element(*ProjectDetailsLocator.TITLE_AUTHOR_LOCATOR).text

@@ -9,3 +9,4 @@ class GitHubMainPage(BasePage):
 
     def __init__(self, driver):
         self.toolbar = Toolbar(driver)
+        super(GitHubMainPage, self).__init__(driver)

@@ -1,7 +1,7 @@
 import mysql.connector
 
 
-class DbManager:
+class MysqlDbManager(object):
     def __init__(self, host, port, user, passwd, database):
         self.host = host
         self.port = port
