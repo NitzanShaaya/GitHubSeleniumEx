@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+    mysql:
+        build: ./mysql
+        image: mysql:8.0
+        container_name: scrapperdb
+        environment:
+            MYSQL_ROOT_PASSWORD: Password1
+            MYSQL_USER: scrapper
+            MYSQL_PASSWORD: scrapper
+            MYSQL_DATABASE: scrapper_output
+            MYSQL_TCP_PORT: 5400
+        ports:
+            - 5400:3306
+        

@@ -6,7 +6,7 @@ from scrapper_db_manager import ScrapperDbManager
 
 # About the consts, i wanted to move them to a configuration(wrote the config section if you are interested
 # but i decided against it once seeing the ramifications or one or two values in danger of changing
-
+from scrapper_mongo_manager import ScrapperMongoManager
 
 driver = webdriver.Chrome("chromedriver\\chromedriver.exe")
 driver.get("https://github.com/")
@@ -29,10 +29,8 @@ for index in range(0, amount_of_results):
 
 driver.quit()
 
-db_manager = ScrapperDbManager()
-db_manager.create_connection()
-db_manager.insert_search_results(search_results)
-db_manager.close_connection()
+db_manager = ScrapperMongoManager()
+db_manager.insert_pages_details(search_results)
 
 with open("performance_results.txt", "w") as text_file:
     text_file.write('\n'.join(measurements) + '\n')

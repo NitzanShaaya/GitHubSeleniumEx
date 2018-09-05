@@ -8,9 +8,9 @@ insert_sql = "INSERT INTO search_results(uuid,is_error,title,description,tags,la
 class ScrapperDbManager(DbManager):
     def __init__(self):
         self.host = "localhost"
-        self.port = 3306
-        self.user = "root"
-        self.passwd = "Password1"
+        self.port = 5400
+        self.user = "scrapper"
+        self.passwd = "scrapper"
         self.database = "scrapper_output"
 
     def insert_search_results(self, search_results):
