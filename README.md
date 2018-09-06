@@ -15,6 +15,7 @@
 # Use the build scrappers.bat(in the directory its in) to build the scrapper(please notice the dist directory will be created)
 # After one the docker is all up and running, simply run the exe of the scrapper you chose (which are under their own directory in the dist folder).
 # Another side note, you will see some remarks explaining specific sections in my code, they are mean't to inform you of a certain decision i made.
+# If run was successful, on top of the text file with the measurements. a succeeded text file will also be created and will state whether the run was successfuls(a simple True or False)
 # If none of the dockers work, please connect one of the managers to a working db of its kind(change the properties in the config.ini at the matching section(mysql or mongo), to the matching values of the real db).
 
 # Thanks for looking =)
