@@ -8,7 +8,7 @@ from github_search_results_page import SearchResultsPage
 
 
 def scrap():
-    driver = webdriver.Chrome("chromedriver\\chromedriver.exe")
+    driver = webdriver.Chrome("..\..\chromedriver\\chromedriver.exe")
     driver.get("https://github.com/")
     main_page = GitHubMainPage(driver)
     search_time = main_page.toolbar.search('selenium')
@@ -33,10 +33,10 @@ def scrap():
 
 
 def print_measurements(measurements):
-    with open("performance_results.txt", "w") as text_file:
+    with open("..\..\performance_results.txt", "w") as text_file:
         text_file.write('\n'.join(measurements) + '\n')
 
 
 def print_result(succeeded):
-    with open("succeeded.txt", "w") as text_file:
+    with open("..\..\succeeded.txt", "w") as text_file:
         text_file.write('succeeded='+succeeded)

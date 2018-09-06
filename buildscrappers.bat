@@ -1,0 +1,2 @@
+pyinstaller scrapper_mongo.py
+pyinstaller scrapper_mysql.py

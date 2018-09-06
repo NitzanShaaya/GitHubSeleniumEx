@@ -12,7 +12,8 @@
 # If you chose mongo:
 #   Run StartMongo.bat(will also wait 30 seconds for mongo to load)
 # 
-# After one the docker is all up and running, simply run the exe of the scrapper you chose (which are in this directory).
+# Use the build scrappers.bat(in the directory its in) to build the scrapper(please notice the dist directory will be created)
+# After one the docker is all up and running, simply run the exe of the scrapper you chose (which are under their own directory in the dist folder).
 # Another side note, you will see some remarks explaining specific sections in my code, they are mean't to inform you of a certain decision i made.
 # If none of the dockers work, please connect one of the managers to a working db of its kind(change the properties in the config.ini at the matching section(mysql or mongo), to the matching values of the real db).
 
